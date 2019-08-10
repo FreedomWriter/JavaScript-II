@@ -65,7 +65,7 @@ multiplyNums (2,3, function(multiply) {
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  cb(list.includes(item));
+  return cb(list.includes(item));
 }
 
 contains(5, items, function(contains){
@@ -73,9 +73,21 @@ contains(5, items, function(contains){
 })
 
 /* STRETCH PROBLEM */
+//const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-function removeDuplicates(array, cb) {
+function removeDuplicates(item, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  
+  let unique_array = item.filter(function(elem, index, self) {
+      return index == self.indexOf(elem);
+  });
+  return unique_array
 }
+
+console.log(removeDuplicates(items));
+
+
+
+
