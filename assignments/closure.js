@@ -6,7 +6,7 @@ const creating = `I am`;
 
 myFunc = () => {
   const closures = ` creating closure!!`;
-  console.log('I think...');
+  console.log('I think, therefore...');
   myOtherFunc();
   function myOtherFunc() {
     console.log(creating + closures);
