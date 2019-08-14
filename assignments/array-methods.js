@@ -77,13 +77,36 @@ console.log(largeShirts);
 
 let ticketPriceTotal = runners.reduce((accumulator, currentValue) => accumulator + currentValue.donation, 0);
 
-console.log(ticketPriceTotal);
+console.log(`$${ticketPriceTotal}`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
+// Problem 1 - create mailing list
 
-// Problem 2
+const mailingList = [];
+runners.forEach(function(item) {mailingList.push(`Name: ${item.first_name} ${item.last_name} Email: ${item.email}`);});
+console.log(mailingList);
+// Problem 2 - create list of unique companies that participated in the event
+const companies = [];
+runners.forEach(function(item) {companies.push(item.company_name);});
+// console.log(companies);
 
-// Problem 3
+function removeDuplicateCompanies(companies) {  
+    let hash = {}
+    let ar = []
+    for (let i = 0; i < companies.length; i++){
+      if (!hash[companies[i]]){
+        ar.push(companies[i])
+      }
+      hash[companies[i]] = true
+    }
+    console.log(ar)
+  }
+  
+  console.log(removeDuplicateCompanies(companies));
+
+// Problem 3 - create a list of participants who's donations were $100 or more
+
+let largeDonations = runners.filter(item => item.donation >= 100);
+console.log(largeDonations);
