@@ -93,15 +93,15 @@ runners.forEach(function(item) {companies.push(item.company_name);});
 // console.log(companies);
 
 function removeDuplicateCompanies(companies) {  
-    let hash = {}
-    let ar = []
+    let hash = {};
+    let ar = [];
     for (let i = 0; i < companies.length; i++){
       if (!hash[companies[i]]){
-        ar.push(companies[i])
+        ar.push(companies[i]);
       }
-      hash[companies[i]] = true
+      hash[companies[i]] = true;
     }
-    console.log(ar)
+    console.log(ar);
   }
   
   console.log(removeDuplicateCompanies(companies));
